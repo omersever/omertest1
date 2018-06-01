@@ -14,14 +14,8 @@
 
     <repositories>
       <repository>
-        <id>oss.sonatype.org-snapshot</id>
-        <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-        <releases>
-          <enabled>false</enabled>
-        </releases>
-        <snapshots>
-          <enabled>true</enabled>
-        </snapshots>
+        <id>akbank-repo</id>
+        <url>http://172.16.22.65:8081/repository/maven-central</url>
       </repository>
     </repositories>
     <properties>
