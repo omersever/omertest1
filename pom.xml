@@ -12,12 +12,7 @@
         <version>2.1</version>
     </parent>
 
-    <repositories>
-      <repository>
-        <id>akbank-repo</id>
-        <url>http://172.16.22.65:8081/repository/maven-central</url>
-      </repository>
-    </repositories>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
