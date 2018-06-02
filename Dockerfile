@@ -3,6 +3,13 @@ MAINTAINER IBM Java engineering at IBM Cloud
 COPY /target/liberty/wlp/usr/servers/defaultServer /config/
 COPY /target/liberty/wlp/usr/shared/resources /config/resources/
 COPY /src/main/liberty/config/jvmbx.options /config/jvm.options
+
+CMD echo "omer-tools1" > /tmp/omer2
+RUN echo "omer-tools2" > /tmp/omer2
+
+RUN echo "<settings><mirrors><mirror><id>akbank-repo1</id><mirrorOf>*</mirrorOf><name>Akbank Maven Repository Manager</name><url>http://172.16.22.65:8081/repository/maven-central</url></mirror></mirrors></settings>" > settings.xml
+CMD echo "<settings><mirrors><mirror><id>akbank-repo2</id><mirrorOf>*</mirrorOf><name>Akbank Maven Repository Manager</name><url>http://172.16.22.65:8081/repository/maven-central</url></mirror></mirrors></settings>" > settings.xml
+
 # Install required features if not present, install APM Data Collector
 RUN installUtility install --acceptLicense defaultServer && installUtility install --acceptLicense apmDataCollector-7.4
 RUN /opt/ibm/wlp/usr/extension/liberty_dc/bin/config_liberty_dc.sh -silent /opt/ibm/wlp/usr/extension/liberty_dc/bin/silent_config_liberty_dc.txt
