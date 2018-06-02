@@ -6,6 +6,12 @@ RUN apt-get update && apt-get install -y maven
 
 ENV PATH /project/target/liberty/wlp/bin/:$PATH
 
+CMD echo "omer-tools1" > /tmp/omer2
+RUN echo "omer-tools2" > /tmp/omer2
+
+RUN echo "<settings><mirrors><mirror><id>akbank-repo3</id><mirrorOf>*</mirrorOf><name>Akbank Maven Repository Manager</name><url>http://172.16.22.65:8081/repository/maven-central</url></mirror></mirrors></settings>" > settings.xml
+CMD echo "<settings><mirrors><mirror><id>akbank-repo4</id><mirrorOf>*</mirrorOf><name>Akbank Maven Repository Manager</name><url>http://172.16.22.65:8081/repository/maven-central</url></mirror></mirrors></settings>" > settings.xml
+
 ARG bx_dev_user=root
 ARG bx_dev_userid=1000
 RUN BX_DEV_USER=$bx_dev_user
