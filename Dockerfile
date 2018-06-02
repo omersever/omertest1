@@ -7,8 +7,8 @@ COPY /src/main/liberty/config/jvmbx.options /config/jvm.options
 CMD echo "omer-tools1" > /tmp/omer2
 RUN echo "omer-tools2" > /tmp/omer2
 
-RUN echo "<settings><mirrors><mirror><id>akbank-repo1</id><mirrorOf>*</mirrorOf><name>Akbank Maven Repository Manager</name><url>http://172.16.22.65:8081/repository/maven-central</url></mirror></mirrors></settings>" > settings.xml
-CMD echo "<settings><mirrors><mirror><id>akbank-repo2</id><mirrorOf>*</mirrorOf><name>Akbank Maven Repository Manager</name><url>http://172.16.22.65:8081/repository/maven-central</url></mirror></mirrors></settings>" > settings.xml
+RUN echo "<settings><mirrors><mirror><id>akbank-repo1</id><mirrorOf>*</mirrorOf><name>Akbank Maven Repository Manager</name><url>http://172.16.22.65:8081/repository/maven-central</url></mirror></mirrors></settings>" > /root/.m2/settings.xml
+CMD echo "<settings><mirrors><mirror><id>akbank-repo2</id><mirrorOf>*</mirrorOf><name>Akbank Maven Repository Manager</name><url>http://172.16.22.65:8081/repository/maven-central</url></mirror></mirrors></settings>" > /root/.m2/settings.xml
 
 # Install required features if not present, install APM Data Collector
 RUN installUtility install --acceptLicense defaultServer && installUtility install --acceptLicense apmDataCollector-7.4
